@@ -1,1 +1,31 @@
-"The first test" 
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/tfaris/PrintMargin/master/js/jquery.printMargin.js"></script>
+    <style>
+        textarea{
+            width:50%;
+            height: 200px;
+        }
+        #surface2{
+            font-size: 24px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://raw.github.com/tfaris/PrintMargin/master/css/jquery.printMargin.css" />
+    <script type="text/javascript">
+        var margin;
+        $(document).ready(function(){
+            margin = $("textarea").printMargin({
+                column: 35
+            });
+        });
+    </script>
+</head>
+<body>
+<textarea id="surface1">The margin ruler has been set to 35
+    characters for both of these
+    textareas...</textarea>
+<textarea id="surface2">But this one has a larger font, so the
+    margin is further to the right.</textarea>
+</body>
+</html>
