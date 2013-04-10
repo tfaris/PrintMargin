@@ -42,12 +42,14 @@
                 marginContainer = container;
                 marginRule = rule;
                 marginLine = ruleLine;
+                pmObj.fitRuler();
             });
 
             // On surface scroll, reposition the margin line
             marginSurface.scroll(function(e){
                 var h = marginSurface.scrollLeft();
                 marginRule.css("left",-h);
+                pmObj.fitRuler();
             });
 
             marginSurface.keyup(function(){
@@ -121,7 +123,7 @@
                 lineLeft = parseInt(marginLine.css("left")),
                 scrollLeft = marginSurface.scrollLeft();
 
-            if (lineLeft > surfaceLeft && lineLeft - scrollLeft <= css.width)
+            if (lineLeft >= surfaceLeft && lineLeft - scrollLeft <= css.width)
             {
                 marginLine.css("display","block");
             }
